@@ -1,5 +1,5 @@
 {
-  "domain": "fetch_latest_file",
+  "domain": "latest",
   "name": "Fetch latest File",
   "documentation": "https://github.com/bexem/Lastest-file-HA-Custom-Component",
   "issue_tracker": "https://github.com/bexem/Lastest-file-HA-Custom-Component/issues",
