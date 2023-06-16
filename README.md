@@ -35,6 +35,8 @@ This will search for the latest `.jpg` and `.mp4` files that start with "cam1" i
 
 The main use case for this component is in a home security setup with Reolink cameras. Whenever an event is triggered, Home Assistant fetches the relevant files and can post them to a specific Discord channel. This provides a streamlined way to access important security footage as soon as it is needed.
 
+### [See My example](https://github.com/bexem/Fetch-Lastest-file-HA-Custom-Component/example.md)
+
 ## Further Uses
 
 This component can also be used in many other scenarios, such as:
