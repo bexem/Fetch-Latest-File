@@ -9,8 +9,8 @@ This custom component for Home Assistant allows you to fetch the latest files (s
     1. Go to any of the sections (integrations, frontend, automation).
     2. Click on the 3 dots in the top right corner.
     3. Select "Custom repositories"
-    4. Add the URL to the repository.
-    5. Select the correct category.
+    4. Add the [URL](https://github.com/bexem/Fetch-Lastest-file-HA-Custom-Component) to the repository.
+    5. Select the integration category.
     6. Click the "ADD" button.
 2. Add the following to your `configuration.yaml`:
 
