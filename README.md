@@ -1,14 +1,15 @@
-# Home Assistant "Latest file" Custom Component
+# Home Assistant "Fetch latest file" Custom Component
 
 This custom component for Home Assistant allows you to fetch the latest files (such as camera screenshots and video events) from a specified directory. It was specifically designed for use with Reolink cameras and their integrations but can be easily adapted for a variety of other use cases.
 
 ## Installation
 
-1. Copy the `files` folder into your `custom_components` folder within your Home Assistant configuration directory.
+1. Copy the `fetch_latest_file` folder into your `custom_components` folder within your Home Assistant configuration directory.
+2. Add the following to your `configuration.yaml`:
 
-## Configuration
-
-No configuration is necessary within your `configuration.yaml` file. All parameters are passed directly when calling the service.
+```yaml
+fetch_latest_file:
+```
 
 ## Usage
 
