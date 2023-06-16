@@ -1,6 +1,6 @@
 from homeassistant import config_entries
 
-DOMAIN = "fetch_latest_file"
+DOMAIN = "latest"
 
 class FetchLatestFileConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     VERSION = 1
