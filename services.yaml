@@ -1,0 +1,19 @@
+fetch:
+  name: Fetch Latest File
+  description: Fetches the most recent file that starts with the given filename in the specified directory. Optionally, filter by file extension.
+  fields:
+    FileName:
+      name: File Name
+      description: The beginning of the name of the file to fetch.
+      example: "test"
+      required: true
+    Directory:
+      name: Directory
+      description: The directory to fetch the file from.
+      example: "/config"
+      required: true
+    Extension:
+      name: Extension
+      description: The extension of the file to fetch. If multiple extensions are given, the service will fetch the latest file for each extension.
+      example: ["jpg", "mp4"]
+      required: false
