@@ -3,7 +3,7 @@ from datetime import datetime
 from homeassistant.helpers import service
 import glob
 
-DOMAIN = "fetch_latest_file"
+DOMAIN = "latest"
 
 def setup(hass, config):
     def handle_fetch(call):
@@ -16,7 +16,7 @@ def setup(hass, config):
 
         # Validate inputs
         if not isinstance(directory, str) or not isinstance(file_name, str) or not isinstance(extensions, list):
-            hass.states.set(f"{DOMAIN}.latest", "Invalid input")
+            hass.states.set(f"{DOMAIN}.file", "Invalid input")
             return
 
         if extensions is not None:
@@ -31,20 +31,20 @@ def setup(hass, config):
                         if extensions is None or file_ext in extensions:
                             files[file_ext].append(os.path.join(dirpath, filename))
         except FileNotFoundError:
-            hass.states.set(f"{DOMAIN}.latest", "Directory not found")
+            hass.states.set(f"{DOMAIN}.file", "Directory not found")
             return
         except NotADirectoryError:
-            hass.states.set(f"{DOMAIN}.latest", "Path is not a directory")
+            hass.states.set(f"{DOMAIN}.file", "Path is not a directory")
             return
         except PermissionError:
-            hass.states.set(f"{DOMAIN}.latest", "Access denied to directory or a file in the directory")
+            hass.states.set(f"{DOMAIN}.file", "Access denied to directory or a file in the directory")
             return
         except OSError:
-            hass.states.set(f"{DOMAIN}.latest", "Unable to read a file in the directory")
+            hass.states.set(f"{DOMAIN}.file", "Unable to read a file in the directory")
             return
 
         if not any(files.values()):
-            hass.states.set(f"{DOMAIN}.latest", "No matching files found")
+            hass.states.set(f"{DOMAIN}.file", "No matching files found")
             return
 
         latest_files = {}
@@ -61,7 +61,7 @@ def setup(hass, config):
 
                 latest_files[file_type] = latest_file
 
-        hass.states.set(f"{DOMAIN}.latest", "Done", latest_files)
+        hass.states.set(f"{DOMAIN}.file", "Done", latest_files)
 
 
     hass.services.register(DOMAIN, "fetch", handle_fetch)
