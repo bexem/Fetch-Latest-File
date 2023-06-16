@@ -4,8 +4,9 @@ from homeassistant.helpers import service
 import glob
 
 DOMAIN = "latest"
+CONFIG_SCHEMA = vol.Schema({vol.Optional(DOMAIN): vol.Schema({})}, extra=vol.ALLOW_EXTRA)
 
-def setup(hass, config):
+async def async_setup(hass, config):
     def handle_fetch(call):
         # Normalize the dictionary keys
         normalized_data = {k.lower(): v for k, v in call.data.items()}
@@ -69,3 +70,5 @@ def setup(hass, config):
     return True
 
 
+async def async_setup_entry(hass, entry):
+    return True
