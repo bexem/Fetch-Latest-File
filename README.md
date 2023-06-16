@@ -13,7 +13,7 @@ fetch_latest_file:
 
 ## Usage
 
-Once you've set up the custom component in your Home Assistant instance, you can call it using the service `files.fetch` with the following parameters:
+Once you've set up the custom component in your Home Assistant instance, you can call it using the service `latest.fetch` with the following parameters:
 
 - `directory`: The directory to search for files. *(Required)*
 - `filename`: The start of the file name to search for. *(Required)*
@@ -22,7 +22,7 @@ Once you've set up the custom component in your Home Assistant instance, you can
 Here's an example of how to call this service:
 
 ```yaml
-service: files.fetch
+service: latest.fetch
 data:
   directory: "/path/to/your/directory"
   filename: "cam1"
