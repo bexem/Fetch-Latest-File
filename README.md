@@ -46,4 +46,4 @@ This component is highly flexible and can be adapted to suit a variety of needs 
 
 ## Support
 
-Feel free to [open an issue](https://github.com/bexem/Lastest-file-HA-Custom-Component/issues) for any problems or feature requests.
+Feel free to [open an issue](https://github.com/bexem/Fetch-Lastest-file-HA-Custom-Component/issues) for any problems or feature requests.
