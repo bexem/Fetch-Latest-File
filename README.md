@@ -32,7 +32,7 @@ Once you've set up the custom component in your Home Assistant instance, you can
 Here's an example of how to call this service:
 
 ```yaml
-service: latest.fetch
+service: fetch_latest_file.fetch
 data:
   directory: "/path/to/your/directory"
   filename: "cam1"
@@ -41,7 +41,7 @@ data:
 
 This will search for the latest `.jpg` and `.mp4` files that start with "cam1" in the specified directory. The result is then stored in a entity state attribute which you can access in your automations, scripts, or templates.
 
-Entity: **latest.file** 's attributes:
+Entity: **fetch_latest_file.file** 's attributes:
 ```
 video: /path/to/your/directory/cam1_20230613102757.mp4
 image: /path/to/your/directory/cam1_20230613102757.jpg
