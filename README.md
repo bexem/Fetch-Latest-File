@@ -37,7 +37,13 @@ data:
   extension: ["jpg", "mp4"]
 ```
 
-This will search for the latest `.jpg` and `.mp4` files that start with "cam1" in the specified directory. The result is then stored in a state which you can access in your automations, scripts, or templates.
+This will search for the latest `.jpg` and `.mp4` files that start with "cam1" in the specified directory. The result is then stored in a entity state attribute which you can access in your automations, scripts, or templates.
+
+Entity: **latest.file** 's attributes:
+```
+video: /path/to/your/directory/cam1_20230613102757.mp4
+image: /path/to/your/directory/cam1_20230613102757.jpg
+```
 
 ## Use Case
 
@@ -53,6 +59,20 @@ This component can also be used in many other scenarios, such as:
 - Retrieving the latest log files for debugging purposes
 
 This component is highly flexible and can be adapted to suit a variety of needs within your Home Assistant setup.
+List of supported file extensions categories:
+
+- Image: jpg, jpeg, png, gif, bmp, webp, svg, heic, raw
+- Video: mp4, mkv, webm, flv, vob, ogv, avi, mov, wmv, mpg, mpeg, m4v
+- Audio: mp3, flac, wav, aac, ogg, wma, m4a, opus
+- Document: doc, docx, odt, pdf, rtf, tex, txt, wpd
+- Spreadsheet: xls, xlsx, ods, csv
+- Presentation: ppt, pptx, odp
+- Web: html, htm, xhtml, xml, css, js, php, json
+- Archive: zip, tar, gz, rar, 7z
+- Executable: exe, msi, bin, command, sh, bat, crx
+- Config: yaml, yml, ini, cfg, conf
+- Log: log, txt, log, syslog, eventlog, debug, audit
+- **Unknown**: none of the above.
 
 ## Support
 

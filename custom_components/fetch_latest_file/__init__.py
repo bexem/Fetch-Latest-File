@@ -52,12 +52,30 @@ def setup(hass, config):
             if ext_files:
                 latest_file = max(ext_files, key=os.path.getctime)
                 file_type = "file"
-                if ext in ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'svg']:
+                if ext in ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'svg', 'heic', 'raw']:
                     file_type = "image"
-                elif ext in ['mp4', 'mkv', 'webm', 'flv', 'vob', 'ogv', 'avi', 'mov', 'wmv']:
+                elif ext in ['mp4', 'mkv', 'webm', 'flv', 'vob', 'ogv', 'avi', 'mov', 'wmv', 'mpg', 'mpeg', 'm4v']:
                     file_type = "video"
-                elif ext in ['mp3', 'flac', 'wav', 'aac', 'ogg', 'wma']:
-                    file_type = "music"
+                elif ext in ['mp3', 'flac', 'wav', 'aac', 'ogg', 'wma', 'm4a', 'opus']:
+                    file_type = "audio"
+                elif ext in ['doc', 'docx', 'odt', 'pdf', 'rtf', 'tex', 'txt', 'wpd']:
+                    file_type = "document"
+                elif ext in ['xls', 'xlsx', 'ods', 'csv']:
+                    file_type = "spreadsheet"
+                elif ext in ['ppt', 'pptx', 'odp']:
+                    file_type = "presentation"
+                elif ext in ['html', 'htm', 'xhtml', 'xml', 'css', 'js', 'php', 'json']:
+                    file_type = "web"
+                elif ext in ['zip', 'tar', 'gz', 'rar', '7z']:
+                    file_type = "archive"
+                elif ext in ['exe', 'msi', 'bin', 'command', 'sh', 'bat', 'crx']:
+                    file_type = "executable"
+                elif ext in ['yaml', 'yml', 'ini', 'cfg', 'conf']:
+                    file_type = "config"
+                elif ext in ['log', 'txt', 'log', 'syslog', 'eventlog', 'debug', 'audit']:
+                    file_type = "log"
+                else:
+                    file_type = "unknown"
 
                 latest_files[file_type] = latest_file
 
