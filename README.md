@@ -5,7 +5,7 @@ This custom component for Home Assistant allows you to fetch the latest files (s
 ## Installation
 
 1. Copy the `fetch_latest_file` folder into your `custom_components` folder within your Home Assistant configuration directory.
-1. Or install it via [![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration) using the HACS custom repositories:
+1. Or install it via [![hacs_badge](https://my.home-assistant.io/redirect/hacs_repository/?owner=bexem&repository=https%3A%2F%2Fgithub.com%2Fbexem%2FFetch-Lastest-file-HA-Custom-Component&category=integrations) using the HACS custom repositories:
     1. Go to any of the sections (integrations, frontend, automation).
     2. Click on the 3 dots in the top right corner.
     3. Select "Custom repositories"
