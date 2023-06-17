@@ -1,6 +1,6 @@
 from homeassistant import config_entries
 
-class ConfigFlowHandler(config_entries.ConfigFlow, domain="latest"):
+class ConfigFlowHandler(config_entries.ConfigFlow, domain="fetch_latest_file"):
     async def async_step_import(self, user_input=None):
         return await self.async_step_user()
 

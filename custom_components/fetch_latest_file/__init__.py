@@ -1,7 +1,7 @@
 import os, glob
 from homeassistant.helpers import service
 
-DOMAIN = "latest"
+DOMAIN = "fetch_latest_file"
 
 def setup(hass, config):
     def handle_fetch(call):

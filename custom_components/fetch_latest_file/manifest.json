@@ -4,7 +4,6 @@
   "documentation": "https://github.com/bexem/Lastest-file-HA-Custom-Component",
   "issue_tracker": "https://github.com/bexem/Lastest-file-HA-Custom-Component/issues",
   "iot_class": "local_push",
-  "integration_type": "service",
   "config_flow": true,
   "version": "0.1.0",
   "author": "bexem",
