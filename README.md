@@ -9,7 +9,7 @@ This custom component for Home Assistant allows you to fetch the latest files (s
         1. Go to any of the sections (integrations, frontend, automation).
         2. Click on the 3 dots in the top right corner.
         3. Select "Custom repositories"
-        4. Add this repository [URL](https://github.com/bexem/Fetch-Lastest-file-HA-Custom-Component) to the repository text field.
+        4. Add this repository [URL](https://github.com/bexem/Fetch-Latest-File) to the repository text field.
         5. Select the integration category.
         6. Click the "ADD" button. </details>
 2. Go to Configuration > Integrations > Add Integration > **Fetch Latest File**
@@ -51,7 +51,7 @@ image: /path/to/your/directory/cam1_20230613102757.jpg
 
 The main use case for this component is in a home security setup with Reolink cameras. Whenever an event is triggered, Home Assistant fetches the relevant files and can post them to a specific Discord channel. This provides a streamlined way to access important security footage as soon as it is needed.
 
-### [See My example](https://github.com/bexem/Fetch-Lastest-file-HA-Custom-Component/wiki/Example)
+### [See My example](https://github.com/bexem/Fetch-Latest-File/wiki/Example)
 
 ## Further Uses
 
