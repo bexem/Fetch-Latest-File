@@ -1,7 +1,5 @@
-import os
-from datetime import datetime
+import os, glob
 from homeassistant.helpers import service
-import glob
 
 DOMAIN = "latest"
 
@@ -86,3 +84,5 @@ def setup(hass, config):
 
     return True
 
+async def async_setup_entry(hass, entry):
+    return True
