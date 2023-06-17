@@ -4,14 +4,15 @@ This custom component for Home Assistant allows you to fetch the latest files (s
 
 ## Installation
 
-1. Copy the `fetch_latest_file` folder into your `custom_components` folder within your Home Assistant configuration directory.
-1. Or install it via [![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://my.home-assistant.io/redirect/hacs_repository/?repository=https%3A%2F%2Fgithub.com%2Fbexem%2FFetch-Lastest-file-HA-Custom-Component&category=integrations) using the HACS custom repositories:
-    1. Go to any of the sections (integrations, frontend, automation).
-    2. Click on the 3 dots in the top right corner.
-    3. Select "Custom repositories"
-    4. Add the [URL](https://github.com/bexem/Fetch-Lastest-file-HA-Custom-Component) to the repository.
-    5. Select the integration category.
-    6. Click the "ADD" button.
+1. Use HACS custom repository:
+    [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=bexem&category=integrations&repository=Fetch-Lastest-file-HA-Custom-Component) <details><summary>Manual Instructions</summary>
+        1. Go to any of the sections (integrations, frontend, automation).
+        2. Click on the 3 dots in the top right corner.
+        3. Select "Custom repositories"
+        4. Add this repository [URL](https://github.com/bexem/Fetch-Lastest-file-HA-Custom-Component) to the repository text field.
+        5. Select the integration category.
+        6. Click the "ADD" button. </details>
+    Or copy the `fetch_latest_file` folder into your `custom_components` folder within your Home Assistant configuration directory.
 2. Add the following to your `configuration.yaml`:
 
 ```yaml
