@@ -5,7 +5,7 @@ This custom component for Home Assistant allows you to fetch the latest files (s
 ## Installation
 
 1. Use HACS custom repository:
-    [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=bexem&category=integrations&repository=Fetch-Lastest-file-HA-Custom-Component) <details><summary>Manual Instructions</summary>
+    [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=bexem&repository=Fetch-Latest-File&category=integration) <details><summary>Manual Instructions</summary>
         1. Go to any of the sections (integrations, frontend, automation).
         2. Click on the 3 dots in the top right corner.
         3. Select "Custom repositories"
