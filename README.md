@@ -14,6 +14,8 @@ This custom component for Home Assistant allows you to fetch the latest files (s
         6. Click the "ADD" button. </details>
 2. Go to Configuration > Integrations > Add Integration > **Fetch Latest File**
 
+OR
+
 1. Copy the `fetch_latest_file` folder into your `custom_components` folder within your Home Assistant configuration directory.
 2. Add the following to your `configuration.yaml`:
 
