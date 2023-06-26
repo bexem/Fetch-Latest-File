@@ -11,7 +11,20 @@ def setup(hass, config):
         directory = normalized_data.get('directory')
         file_name = normalized_data.get('filename')
         extensions = normalized_data.get('extension') or []
+        min_size_str = normalized_data.get('min_size') or "0B"
 
+        # Convert min_size_str to bytes
+        size_multiplier = {"B": 1, "K": 1024, "M": 1024*1024, "G": 1024*1024*1024}
+        min_size_str = min_size_str.upper()
+        if not min_size_str[-1] in size_multiplier:
+            hass.states.set(f"{DOMAIN}.file", "Invalid size input")
+            return
+        try:
+            min_size = int(min_size_str[:-1]) * size_multiplier[min_size_str[-1]]
+        except ValueError:
+            hass.states.set(f"{DOMAIN}.file", "Invalid size input")
+            return
+        
         # Validate inputs
         if not isinstance(directory, str) or not isinstance(file_name, str) or not isinstance(extensions, list):
             hass.states.set(f"{DOMAIN}.file", "Invalid input")
@@ -22,12 +35,15 @@ def setup(hass, config):
 
         files = {ext: [] for ext in extensions}
         try:
-            for dirpath, dirnames, filenames in os.walk(directory):
-                for filename in filenames:
-                    if filename.lower().startswith(file_name.lower()):
-                        file_ext = os.path.splitext(filename)[1].lower().strip('.')
-                        if extensions is None or file_ext in extensions:
-                            files[file_ext].append(os.path.join(dirpath, filename))
+                for dirpath, dirnames, filenames in os.walk(directory):
+                        for filename in filenames:
+                            if filename.lower().startswith(file_name.lower()):
+                                file_path = os.path.join(dirpath, filename)
+                                file_size = os.path.getsize(file_path)
+                                if file_size >= min_size:
+                                    file_ext = os.path.splitext(filename)[1].lower().strip('.')
+                                    if extensions is None or file_ext in extensions:
+                                        files[file_ext].append(os.path.join(dirpath, filename))
         except FileNotFoundError:
             hass.states.set(f"{DOMAIN}.file", "Directory not found")
             return
