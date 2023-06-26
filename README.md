@@ -1,11 +1,11 @@
 # Home Assistant "Fetch latest file" Custom Component
 
-This custom component for Home Assistant allows you to fetch the latest files (such as camera screenshots and video events) from a specified directory. It was specifically designed for use with Reolink cameras and their integrations but can be easily adapted for a variety of other use cases.
+This custom component for Home Assistant allows you to fetch the latest files (such as camera screenshots and video events) of a certain minimum size from a specified directory. It was specifically designed for use with Reolink cameras and their integrations but can be easily adapted for a variety of other use cases.
 
 ## Installation
 
 1. Use HACS custom repository:
-    [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=bexem&repository=Fetch-Latest-File&category=integration) <details><summary>Manual Instructions</summary>
+    [![Open your Home Assistant instance and show the add repository dialog of the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=bexem&repository=Fetch-Latest-File&category=integration) <details><summary>Manual Instructions</summary>
         1. Go to any of the sections (integrations, frontend, automation).
         2. Click on the 3 dots in the top right corner.
         3. Select "Custom repositories"
@@ -30,6 +30,7 @@ Once you've set up the custom component in your Home Assistant instance, you can
 - `directory`: The directory to search for files. *(Required)*
 - `filename`: The start of the file name to search for. *(Required)*
 - `extension`: The file extension(s) to search for. *(Optional)*
+- `min_size`: The minimum size of the files to fetch. Specify the size as a string with a unit: B for bytes, K for kilobytes, M for megabytes, G for gigabytes. For example, "1M" for 1 megabyte. *(Optional)*
 
 Here's an example of how to call this service:
 
@@ -39,9 +40,10 @@ data:
   directory: "/path/to/your/directory"
   filename: "cam1"
   extension: ["jpg", "mp4"]
+  min_size: "1M"
 ```
 
-This will search for the latest `.jpg` and `.mp4` files that start with "cam1" in the specified directory. The result is then stored in a entity state attribute which you can access in your automations, scripts, or templates.
+This will search for the latest `.jpg` and `.mp4` files that start with "cam1" in the specified directory and are at least 1 megabyte in size. The result is then stored in a entity state attribute which you can access in your automations, scripts, or templates.
 
 Entity: **fetch_latest_file.file** 's attributes:
 ```
@@ -51,7 +53,7 @@ image: /path/to/your/directory/cam1_20230613102757.jpg
 
 ## Use Case
 
-The main use case for this component is in a home security setup with Reolink cameras. Whenever an event is triggered, Home Assistant fetches the relevant files and can post them to a specific Discord channel. This provides a streamlined way to access important security footage as soon as it is needed.
+The main use case for this component is in a home security setup with Reolink cameras. Whenever an event is triggered, Home Assistant fetches the relevant files that meet the minimum size requirement and can post them to a specific Discord channel. This provides a streamlined way to access important security footage as soon as it is needed.
 
 ### [See My example](https://github.com/bexem/Fetch-Latest-File/wiki/Example)
 
@@ -59,8 +61,10 @@ The main use case for this component is in a home security setup with Reolink ca
 
 This component can also be used in many other scenarios, such as:
 
-- Fetching the latest screenshot from a home automation event
-- Retrieving the latest log files for debugging purposes
+- Fetching the latest screenshot from a home automation event that is of
+
+ a certain size
+- Retrieving the latest log files of a certain size for debugging purposes
 
 This component is highly flexible and can be adapted to suit a variety of needs within your Home Assistant setup.
 List of supported file extensions categories:
