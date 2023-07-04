@@ -15,16 +15,16 @@ def setup(hass, config):
 
         # Convert min_size_str to bytes
         size_multiplier = {"B": 1, "K": 1024, "M": 1024*1024, "G": 1024*1024*1024}
-        min_size_str = min_size_str.upper()
+        min_size_str = min_size_str.upper().strip()
         if not min_size_str[-1] in size_multiplier:
             hass.states.set(f"{DOMAIN}.file", "Invalid size input")
             return
         try:
-            min_size = int(min_size_str[:-1]) * size_multiplier[min_size_str[-1]]
+            min_size = int(min_size_str.rstrip('BKMG')) * size_multiplier.get(min_size_str[-1], 1)
         except ValueError:
             hass.states.set(f"{DOMAIN}.file", "Invalid size input")
             return
-        
+
         # Validate inputs
         if not isinstance(directory, str) or not isinstance(file_name, str) or not isinstance(extensions, list):
             hass.states.set(f"{DOMAIN}.file", "Invalid input")
