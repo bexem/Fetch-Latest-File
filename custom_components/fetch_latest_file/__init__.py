@@ -36,13 +36,13 @@ def setup(hass, config):
         files = {ext: [] for ext in extensions}
         try:
             for dirpath, dirnames, filenames in os.walk(directory):
-                for filename in filenames:
-                    if filename.lower().startswith(file_name.lower()):
-                        file_path = os.path.join(dirpath, filename)
-                        file_size = os.path.getsize(file_path)
-                        file_ext = os.path.splitext(filename)[1].lower().strip('.')
-                        if file_size >= min_size and (extensions is None or file_ext in extensions):
-                            files[file_ext].append(os.path.join(dirpath, filename))
+                    for filename in filenames:
+                        if filename.lower().startswith(file_name.lower()):
+                            file_path = os.path.join(dirpath, filename)
+                            file_size = os.path.getsize(file_path)
+                            file_ext = os.path.splitext(filename)[1].lower().strip('.')
+                            if file_size >= min_size and (extensions is None or file_ext in extensions or file_ext == ''):
+                                files[file_ext].append(os.path.join(dirpath, filename))
 
         except FileNotFoundError:
             hass.states.set(f"{DOMAIN}.file", "Directory not found")
