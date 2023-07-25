@@ -19,6 +19,6 @@ fetch:
       required: false
     MinSize:
       name: Minimum File Size
-      description: The minimum size of the file to fetch. Specify the size as a string with a unit: B for bytes, K for kilobytes, M for megabytes, G for gigabytes. For example, "1M" for 1 megabyte.
+      description: The minimum size of the file to fetch. Specify the size as a string with a unit, B for bytes, K for kilobytes, M for megabytes, G for gigabytes. For example, "1M" for 1 megabyte.
       example: "1M"
       required: false
